@@ -10,7 +10,7 @@ const client = new Discord.Client({
 const prefix = '/';
 //commands
 const addmod= 'mod-meh';
-
+const say = 'say';
 client.on('ready', () => {
     console.log('our bot is ready to go');
 });
@@ -27,6 +27,11 @@ client.on('message', message => {
 
   if (message.content === 'ye bish stonks'){
     message.react('😍')
+  }
+
+  if(message.content === `${prefix}${say}`){
+    speech= message.content.slice(4);
+    message.channel.send(`${speech}`);
   }
 });
 
