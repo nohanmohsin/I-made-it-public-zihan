@@ -29,7 +29,7 @@ client.on('message', message => {
     message.react('😍')
   }
 
-  if(message.content === `${prefix}${say}` && message.content.length > 4){
+  if(message.content.includes(`${prefix}${say}`) && message.content.length > 4){
     const speech= message.content.slice(4);
     message.channel.send(speech);
   }
